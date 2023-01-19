@@ -50,10 +50,6 @@ public class DAO {
         return true;
     }
 
-    // public HashMap<Integer, Estudiante> getData() {
-    //     return this.data;
-    // }
-
     public static boolean isValidGrade(int grade) {
         boolean isValid = true;
         if (grade < 0 || grade > 100) {
