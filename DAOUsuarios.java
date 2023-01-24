@@ -22,6 +22,7 @@ public class DAOUsuarios {
             while ((line = br.readLine()) != null) {
                 User user = buildUser(line);
                 this.users.put(user.nombre, user);
+
             }
             br.close();
         } catch (IOException e) {
@@ -33,8 +34,8 @@ public class DAOUsuarios {
     public User buildUser(String line){
         String[] row = line.split(",");
         System.out.println("AQUI"+ row[0] + row[1]);
-        String contrasenia = readName(row);
-        String nombre = readContrasenia(row);
+        String  nombre = readName(row);
+        String  contrasenia = readContrasenia(row);
         return new User(nombre, contrasenia);
     }
 

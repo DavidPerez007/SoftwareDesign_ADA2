@@ -48,7 +48,6 @@ public class DAO {
             estudiante.asignarCalificacion(grade);
             i++;
         }
-        input.close();
         return true;
     }
 

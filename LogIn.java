@@ -20,27 +20,32 @@ public class LogIn {
             readPassword(input);
             validateUser();
         }
-        input.close();
     }
 
     public void readName(Scanner input) {
         System.out.println("Inserte su nombre de usuario: ");
         this.nombre = input.nextLine();
+        System.out.println("El nombre es: " + this.nombre);
     }
 
     public void readPassword(Scanner input) {
         System.out.println("Inserte su contraseña: ");
         this.contrasenia = input.nextLine();
+        System.out.println("El nombre es: " + this.contrasenia);
     }
 
     public void validateUser() {
         if (userExists()) {
+            System.out.println("el usuario existe");
             if (isCorrectPassword()) {
                 this.loggedIn = true;
+            } else{
+                System.out.println("Contraseña incorrecta");
             }
-            System.out.println("Contraseña incorrecta");
+        } else{
+            System.out.println("Usuario no encontrado");
         }
-        System.out.println("Usuario no encontrado");
+        
     }
 
     public boolean userExists() {
@@ -49,7 +54,7 @@ public class LogIn {
     }
 
     public boolean isCorrectPassword() {
-        return dao.users.get(this.nombre).contrasenia == this.contrasenia;
+        return dao.users.get(this.nombre).contrasenia.equals(this.contrasenia);
     }
 
     public boolean isLoggedIn(){
