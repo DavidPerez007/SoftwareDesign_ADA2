@@ -71,9 +71,38 @@ public class LogIn {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "quita este return";
+        return "It didnt work";
         
     }
+
+    public String decryptPassword(String encryptedPassword){
+        String encryptedText = encryptedPassword;
+        String key = "This is a secret";
+        // Crear objeto de clave simétrica
+        Key aesKey = new SecretKeySpec(key.getBytes(StandardCharsets.UTF_8), "AES");
+        try{        
+            // Crear objeto Cipher
+            Cipher cipher = Cipher.getInstance("AES");
+            // Inicializar Cipher en modo de desencriptación
+            cipher.init(Cipher.DECRYPT_MODE, aesKey);
+            // Decodificar la cadena encriptada en base64
+            byte[] encryptedBytes = Base64.getDecoder().decode(encryptedText);
+            // Desencriptar los bytes encriptados
+            byte[] decryptedBytes = cipher.doFinal(encryptedBytes);
+            // Convertir los bytes desencriptados a una cadena
+            String decryptedText = new String(decryptedBytes, StandardCharsets.UTF_8);
+            System.out.println("Texto encriptado: " + encryptedText);
+            System.out.println("Texto desencriptado: " + decryptedText);
+
+            return decryptedText;
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        return "It didnt work";
+ 
+    }
+
 
     public boolean userExists() {
         System.out.println(dao.users.get(this.nombre));

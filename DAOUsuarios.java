@@ -33,7 +33,6 @@ public class DAOUsuarios {
 
     public User buildUser(String line){
         String[] row = line.split(",");
-        System.out.println("AQUI"+ row[0] + row[1]);
         String  nombre = readName(row);
         String  contrasenia = readContrasenia(row);
         return new User(nombre, contrasenia);
