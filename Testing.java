@@ -1,3 +1,8 @@
+/*
+ * Actividad realizada por:
+ * Perez Cruz David Leobardo
+ * Rosado Rodriguez Daniel Alejandro
+ */
 import java.util.Scanner;
 
 public class Testing {
