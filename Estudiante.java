@@ -1,6 +1,6 @@
-public class Estudiante {
-    
-    private String nombre;
+public class Estudiante{
+
+    public String nombre;
     private int calificacion;
 
     public Estudiante(String nombre){

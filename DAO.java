@@ -37,12 +37,13 @@ public class DAO {
 
     public boolean anadirCalificaciones() {
         int i = 0;
+        Scanner input = new Scanner(System.in);
         while (i < this.data.size()) {
             Estudiante estudiante = this.data.get(i);
             System.out.println("Inserte calificacion del alumno: " + estudiante.getNombre());
-            int grade = readGrade();
+            int grade = readGrade(input);
             while (isValidGrade(grade) == false) {
-                grade = readGrade();
+                grade = readGrade(input);
             }
             estudiante.asignarCalificacion(grade);
             i++;
@@ -59,21 +60,19 @@ public class DAO {
         return isValid;
     }
 
-    public static int readGrade() {
-        Scanner input = new Scanner(System.in);
+    public static int readGrade(Scanner input) {
         int grade = input.nextInt();
         return grade;
     }
 
     public void writeNewFile() {
         try {
-            FileWriter fileWriter = new FileWriter("files//generatedCSV.csv");
+            FileWriter fileWriter = new FileWriter("files/generatedCSV.csv");
             fileWriter.write("Apellido paterno" + "," +  "Apellido materno" + "," + "Nombre" + ","  + "Calificacion" + "," + "Asignatura" + "\n");
             for (int key : this.data.keySet()) {
                 Estudiante line = devolverEstudiante(key);  
                 fileWriter.write(line.getNombre() + "," + line.getCalif() + "," + "Disenio de Software" + "\n");
             }
-
             fileWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
