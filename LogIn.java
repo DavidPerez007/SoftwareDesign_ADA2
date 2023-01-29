@@ -53,6 +53,15 @@ public class LogIn {
         
     }
 
+    public boolean userExists() {
+        System.out.println(dao.users.get(this.nombre));
+        return dao.users.containsKey(this.nombre);
+    }
+
+    public boolean isCorrectPassword() {
+        return dao.users.get(this.nombre).contrasenia.equals(this.contrasenia);
+    }
+
     public String encryptPassword(String password){
         String originalPassword = password;
         String key = "This is a secret"; // Debe ser de 128, 192 o 256 bits
@@ -101,16 +110,6 @@ public class LogIn {
         
         return "It didnt work";
  
-    }
-
-
-    public boolean userExists() {
-        System.out.println(dao.users.get(this.nombre));
-        return dao.users.containsKey(this.nombre);
-    }
-
-    public boolean isCorrectPassword() {
-        return dao.users.get(this.nombre).contrasenia.equals(this.contrasenia);
     }
 
     public boolean isLoggedIn(){
