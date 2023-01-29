@@ -6,6 +6,8 @@
  */
 import java.util.Scanner;
 
+import com.itextpdf.text.pdf.PdfWriter;
+
 public class Testing {
     public static void main(String[] args) {
         LogIn logIn = new LogIn();
@@ -13,6 +15,7 @@ public class Testing {
         if (logIn.isLoggedIn()) {
             DAO dao = new DAO("files/input.csv");
             renderOptionMenu(dao);
+            
         }
     }
 
@@ -47,6 +50,7 @@ public class Testing {
     public static void askToWriteCSV(DAO dao){
         if (shouldCreateCSV()) {
             generateCSV(dao);
+            dao.writeNewPDF();
         } else {
             System.out.println("Calificaciones registradas con éxito");
         }

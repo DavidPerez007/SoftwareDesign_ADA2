@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Testing",
+            "request": "launch",
+            "mainClass": "Testing",
+            "projectName": "SoftwareDesign_ADA2_9b3646f8"
+        },
+        {
+            "type": "java",
             "name": "Launch scanner",
             "request": "launch",
             "mainClass": "scanner",
