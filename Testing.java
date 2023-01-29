@@ -33,18 +33,24 @@ public class Testing {
 
     public static void aniadirCalificacionUnaPorUna(DAO dao) {
         dao.anadirCalificaciones();
+        askToWriteCSV(dao);
+    }
+
+    public static void aniadirCalificacionAlumno(DAO dao) {
+        System.out.println("Inserte el id del estudiante: ");
+        Scanner input = new Scanner(System.in);
+        int idEstudiante = input.nextInt();
+        dao.aniadirCalificacionAUnEstudiante(idEstudiante);
+        askToWriteCSV(dao);
+    }
+
+    public static void askToWriteCSV(DAO dao){
         if (shouldCreateCSV()) {
             generateCSV(dao);
         } else {
             System.out.println("Calificaciones registradas con éxito");
         }
     }
-
-    public static void aniadirCalificacionAlumno(DAO dao) {
-        System.out.println("opcion 2 seleccionada");
-
-    }
-
     public static void generateCSV(DAO dao) {
         dao.writeNewFile();
         System.out.println("El archivo ha sido generado con éxito");
