@@ -16,17 +16,20 @@ public class Testing {
             menu.renderMenu();
             switch (menu.selectedOption) {
                 case 1:
-                    dao.anadirCalificaciones();
-                    if (shouldCreateCSV()) {
-                        generateCSV(dao);
-                    } else {
-                        System.out.println("Calificaciones registradas con éxito");
-                    }
-                    break;
+                    aniadirCalificacionUnaPorUna(dao);
                 default:
                     System.out.println("opción incorrecta");
             }
 
+        }
+    }
+
+    public static void aniadirCalificacionUnaPorUna(DAO dao) {
+        dao.anadirCalificaciones();
+        if (shouldCreateCSV()) {
+            generateCSV(dao);
+        } else {
+            System.out.println("Calificaciones registradas con éxito");
         }
     }
 
