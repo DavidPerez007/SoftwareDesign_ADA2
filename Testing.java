@@ -12,16 +12,23 @@ public class Testing {
         logIn.initLoginMenu();
         if (logIn.isLoggedIn()) {
             DAO dao = new DAO("files/input.csv");
+            renderOptionMenu(dao);
+        }
+    }
+
+    public static void renderOptionMenu(DAO dao){
             Menu menu = new Menu();
             menu.renderMenu();
             switch (menu.selectedOption) {
                 case 1:
                     aniadirCalificacionUnaPorUna(dao);
+                    break;
+                case 2:
+                    aniadirCalificacionAlumno(dao);
+                    break;
                 default:
                     System.out.println("opción incorrecta");
             }
-
-        }
     }
 
     public static void aniadirCalificacionUnaPorUna(DAO dao) {
@@ -33,6 +40,10 @@ public class Testing {
         }
     }
 
+    public static void aniadirCalificacionAlumno(DAO dao){
+        System.out.println("opcion 2 seleccionada");
+
+    }
     public static void generateCSV(DAO dao) {
         dao.writeNewFile();
         System.out.println("El archivo ha sido generado con éxito");
