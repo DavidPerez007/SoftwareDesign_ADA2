@@ -83,8 +83,7 @@ public class DAO {
     public void writeNewFile() {
         try {
             FileWriter fileWriter = new FileWriter("files/generatedCSV.csv");
-            fileWriter.write("Apellido paterno" + "," + "Apellido materno" + "," + "Nombre" + "," + "Calificacion" + ","
-                    + "Asignatura" + "\n");
+            fileWriter.write("Apellido paterno" + "," + "Apellido materno" + "," + "Nombre" + "," + "Calificacion" + "," + "Asignatura" + "\n");
             for (int key : this.data.keySet()) {
                 Estudiante line = devolverEstudiante(key);
                 fileWriter.write(line.getNombre() + "," + line.getCalif() + "," + "Disenio de Software" + "\n");

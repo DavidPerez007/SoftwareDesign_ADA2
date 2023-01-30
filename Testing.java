@@ -14,9 +14,9 @@ public class Testing {
         LogIn logIn = new LogIn();
         logIn.initLoginMenu();
         boolean shouldContinue = true;
+        DAO dao = new DAO("files/input.csv");
         if (logIn.isLoggedIn()) {
             while (shouldContinue){
-                DAO dao = new DAO("files/input.csv");
                 shouldContinue = renderOptionMenu(dao);
             }
         }
