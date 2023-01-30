@@ -6,31 +6,37 @@
  */
 import java.util.Scanner;
 
-import com.itextpdf.text.pdf.PdfWriter;
+import com.itextpdf.text.pdf.TtfUnicodeWriter;
+
 
 public class Testing {
     public static void main(String[] args) {
         LogIn logIn = new LogIn();
         logIn.initLoginMenu();
+        boolean shouldContinue = true;
         if (logIn.isLoggedIn()) {
-            DAO dao = new DAO("files/input.csv");
-            renderOptionMenu(dao);
-            
+            while (shouldContinue){
+                DAO dao = new DAO("files/input.csv");
+                shouldContinue = renderOptionMenu(dao);
+            }
         }
     }
 
-    public static void renderOptionMenu(DAO dao) {
+    public static boolean renderOptionMenu(DAO dao) {
         Menu menu = new Menu();
         menu.renderMenu();
         switch (menu.selectedOption) {
             case 1:
                 aniadirCalificacionUnaPorUna(dao);
-                break;
+                return true;
             case 2:
                 aniadirCalificacionAlumno(dao);
-                break;
+                return true;
+            case 3:
+                return false;
             default:
                 System.out.println("opción incorrecta");
+                return true;
         }
     }
 
