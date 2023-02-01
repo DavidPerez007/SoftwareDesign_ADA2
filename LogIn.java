@@ -39,8 +39,11 @@ public class LogIn {
         String password = input.nextLine();
         this.contrasenia = encryptPassword(password);
     }
+    public void setEncryptedPassword(String password){
+        this.contrasenia = encryptPassword(password);
+    }
 
-    public void validateUser() {
+    public boolean validateUser() {
         if (userExists()) {
             if (isCorrectPassword()) {
                 this.loggedIn = true;
@@ -50,7 +53,7 @@ public class LogIn {
         } else{
             System.out.println("Usuario no encontrado");
         }
-        
+        return isLoggedIn();
     }
 
     public boolean userExists() {

@@ -6,8 +6,6 @@
  */
 import java.util.Scanner;
 
-import com.itextpdf.text.pdf.TtfUnicodeWriter;
-
 
 public class Testing {
     public static void main(String[] args) {
