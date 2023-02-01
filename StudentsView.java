@@ -1,3 +1,5 @@
+import javax.swing.table.DefaultTableModel;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -31,20 +33,15 @@ public class StudentsView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
 
+        DefaultTableModel table = new DefaultTableModel();
+        String[] titulo = new String[]{"Id", "nombre", "calificación"};
+        table.setColumnIdentifiers(titulo);;
+        StudentsTable.setModel(table);
+
+
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        StudentsTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Alumnos", "Calificaciones"
-            }
-        ));
         jScrollPane1.setViewportView(StudentsTable);
         if (StudentsTable.getColumnModel().getColumnCount() > 0) {
             StudentsTable.getColumnModel().getColumn(1).setResizable(false);
