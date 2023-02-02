@@ -19,10 +19,12 @@ import com.itextpdf.text.pdf.PdfWriter;
 public class DAO {
     public String path;
     public HashMap<Integer, Estudiante> data = new HashMap<>();
+    public int numberOfStudents;
 
     public DAO(String path) {
         this.path = path;
         this.loadData();
+        this.numberOfStudents = this.data.size();
     }
 
     public void loadData() {
@@ -45,6 +47,12 @@ public class DAO {
             e.printStackTrace();
         }
     }
+
+    public Object[] getStudentAsRow(int i){
+        Estudiante currentStudent = data.get(i);
+        return new Object[]{i+1, currentStudent.nombre, currentStudent.getCalif()};
+    }
+
 
     public boolean anadirCalificaciones() {
         int i = 0;

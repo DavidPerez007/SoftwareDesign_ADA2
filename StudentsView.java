@@ -35,9 +35,17 @@ public class StudentsView extends javax.swing.JFrame {
 
         DefaultTableModel table = new DefaultTableModel();
         String[] titulo = new String[]{"Id", "nombre", "calificación"};
-        table.setColumnIdentifiers(titulo);;
+        table.setColumnIdentifiers(titulo);
         StudentsTable.setModel(table);
+        DAO dao = new DAO("files/input.csv");
 
+        int i = 0;
+        while(i < dao.numberOfStudents){
+            table.addRow(dao.getStudentAsRow(i));
+            i++;
+        }
+
+        
 
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
