@@ -45,9 +45,6 @@ public class StudentsView extends javax.swing.JFrame {
             i++;
         }
 
-        
-
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jScrollPane1.setViewportView(StudentsTable);

@@ -74,6 +74,11 @@ public class DAO {
         estudiante.asignarCalificacion(grade);
         return true;
     }
+    public boolean aniadirCalificacionAUnEstudiante(int idEstudiante, int grade){
+        Estudiante estudiante = this.data.get(idEstudiante);
+        estudiante.asignarCalificacion(grade);
+        return true;
+    }
 
     public static boolean isValidGrade(int grade) {
         boolean isValid = true;

@@ -1,7 +1,7 @@
 Apellido paterno,Apellido materno,Nombre,Calificacion,Asignatura
-ALVARADO,CASTILLA,ABNER IVAN,0,Disenio de Software
-CASTILLO,SANCHEZ,ILEANA GABRIELA,0,Disenio de Software
-CHAN,EK,CARLOS JULIAN,0,Disenio de Software
+ALVARADO,CASTILLA,ABNER IVAN,1,Disenio de Software
+CASTILLO,SANCHEZ,ILEANA GABRIELA,2,Disenio de Software
+CHAN,EK,CARLOS JULIAN,3,Disenio de Software
 CHAN,PALOMO,JULIAN ENRIQUE,0,Disenio de Software
 CIME,MORALES,ESTEBAN,0,Disenio de Software
 COUOH,MARTIN,REYNALDO ALEXANDER,0,Disenio de Software
@@ -28,7 +28,7 @@ PEREZ,CRUZ,DAVID LEOBARDO,0,Disenio de Software
 PEREZ,GONZALEZ,ADRIAN NATANAEL,0,Disenio de Software
 QUEVEDO,ZALDIVAR,LUIS JONATHAN,0,Disenio de Software
 QUEZADA,SUAREZ,ARTURO ANDRES,0,Disenio de Software
-ROSADO,RODRIGUEZ,DANIEL ALEJANDRO,2,Disenio de Software
+ROSADO,RODRIGUEZ,DANIEL ALEJANDRO,0,Disenio de Software
 ROSADO,TREJO,ANDRIK YAHIR,0,Disenio de Software
 RUZ,PEREZ,ROGER DE JESUS,0,Disenio de Software
 TORRES,PEREZ,ANDREA ISABEL,0,Disenio de Software
